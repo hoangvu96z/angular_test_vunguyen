@@ -45,7 +45,10 @@
     </div>
   </nav>
 </header>
-
+<div>
+  <div style="height: 200px;background-color: aquamarine;"></div>
+  <xfu-slide-control [controlInput]="controlInput" (successMatch)="successMatch($event)" style="text-align:-webkit-center"></xfu-slide-control>
+</div>
 <main>
   <div class="container-fluid">
     <router-outlet></router-outlet>

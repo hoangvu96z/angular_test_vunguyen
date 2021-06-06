@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/general/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgSpcModule } from 'ng-spc';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgSpcModule
   ],
   providers: [],
   bootstrap: [AppComponent]
