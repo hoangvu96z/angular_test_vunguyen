@@ -22,5 +22,17 @@ export class AppComponent {
       this.listGenerations = data.results;
     })  
   }
-
+  
+   private validateEmailsField(item: string) {
+    let result = true;
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const control = this.emailForm.controls[item];
+    let errors = control.errors;
+    const emailArray = this.splitEmailsString(item, control);
+    if (emailArray && emailArray.length > 0) {
+      result = emailArray.every(email => {
+        return re.test(email);
+      });
+    }
+  }
 }
