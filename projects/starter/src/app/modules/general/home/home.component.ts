@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { DataService } from 'src/app/data.service';
 import * as Rx from 'rxjs/Rx';
 import { forkJoin } from 'rxjs';
+import { DataService } from '../../../data.service';
 
 @Component({
   selector: 'app-home',

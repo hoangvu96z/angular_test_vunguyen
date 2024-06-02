@@ -23,22 +23,5 @@ export class AppComponent {
     })  
   }
   
-   private validateEmailsField(item: string) {
-    let result = true;
-     const regex = /(a+)+b/; // Sensitive
-      const regex2 = new RegExp("(a+)+b"); // Sensitive
-
-      str.search("(a+)+b"); // Sensitive
-      str.match("(a+)+b"); // Sensitive
-      str.split("(a+)+b"); // Sensitive
-    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    const control = this.emailForm.controls[item];
-    let errors = control.errors;
-    const emailArray = this.splitEmailsString(item, control);
-    if (emailArray && emailArray.length > 0) {
-      result = emailArray.every(email => {
-        return re.test(email);
-      });
-    }
-  }
+ 
 }
