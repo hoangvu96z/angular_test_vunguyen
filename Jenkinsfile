@@ -1,4 +1,5 @@
 pipeline {
+    agent { label 'angular'}
     stages {
         stage('Install') {
             steps {
