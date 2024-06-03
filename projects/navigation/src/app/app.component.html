@@ -1,0 +1,63 @@
+<header>
+  <nav class="navbar navbar-expand-md fixed-top navbar-dark " style="background-color: #212121;">
+    <a class="navbar-brand" routerLink="/">
+      <span class="mr-1" style="color:white">HCG INTERVIEW TEST</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-gamepad mr-1" aria-hidden="true"></i>
+            Game
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ng-container *ngFor="let item of listVersion">
+              <a class="dropdown-item" href="#">{{item.game_index}} - {{item.version.name | uppercase}}</a>
+            </ng-container>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-hashtag mr-1" aria-hidden="true"></i>
+            Generations
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ng-container *ngFor="let item of listGenerations">
+              <a class="dropdown-item" href="#">{{item.name | uppercase}}</a>
+            </ng-container>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/locations">
+            <i class="fa fa-globe mr-1" aria-hidden="true"></i>Locations
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/items">
+            <i class="fa fa-globe mr-1" aria-hidden="true"></i>Items
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        Footer HCG INTERVIEW TEST
+      </div>
+    </div>
+  </div>
+</div>
