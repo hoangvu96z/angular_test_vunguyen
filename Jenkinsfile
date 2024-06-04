@@ -1,5 +1,8 @@
 pipeline {
-    agent { label 'node14'}
+    agent { label 'node14'} 
+    tools {
+        nodejs: 'node14'
+    }
     stages {
         stage('Install') {
             steps {
