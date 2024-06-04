@@ -3,7 +3,7 @@ pipeline {
         label 'node14'
     } 
     tools {
-        nodejs: 'nodejs14'
+        nodejs 'nodejs14'
     }
     stages {
         stage('Install') {
