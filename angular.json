@@ -18,7 +18,6 @@
             "main": "projects/starter/src/main.ts",
             "polyfills": "projects/starter/src/polyfills.ts",
             "tsConfig": "projects/starter/tsconfig.app.json",
-            "aot": true,
             "assets": [{
                 "glob": "**/*",
                 "input": "projects/starter/src/assets",
@@ -40,16 +39,16 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "projects/starter/src/assets/params/js/index.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "development": {
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "buildOptimizer": false,
-              "sourceMap": true,
-              "optimization": false,
-              "namedChunks": true
             },
             "production": {
               "fileReplacements": [{
@@ -75,7 +74,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -153,7 +153,6 @@
             "main": "projects/navigation/src/main.ts",
             "polyfills": "projects/navigation/src/polyfills.ts",
             "tsConfig": "projects/navigation/tsconfig.app.json",
-            "aot": true,
             "assets": [{
                 "glob": "**/*",
                 "input": "projects/navigation/src/assets",
@@ -175,16 +174,16 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "projects/navigation/src/assets/params/js/index.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "development": {
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "buildOptimizer": false,
-              "sourceMap": true,
-              "optimization": false,
-              "namedChunks": true
             },
             "production": {
               "fileReplacements": [{
@@ -210,7 +209,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
