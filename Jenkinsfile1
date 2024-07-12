@@ -17,7 +17,7 @@ pipeline {
             steps {
                  script{
                     def changeLog = getChangedFilesList();
-                    changeLog.each{ key, value -> 
+                    changeLog.eachWithIndex { value, index -> 
                         if (value.indexOf('navigation') > 0) {
                             sh '''
                                 npm run build:nav
