@@ -15,8 +15,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                def changeLog = getChangedFilesList();
-                echo "changeLog ${changeLog}"
+                 script{
+                    def changeLog = getChangedFilesList();
+                    echo "changeLog ${changeLog}"
+                 }
+            
                 sh '''
                     npm run build:starter
                 '''
