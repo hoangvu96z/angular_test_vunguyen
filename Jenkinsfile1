@@ -15,11 +15,11 @@ pipeline {
         }
         stage('Build') {
             steps {
+                def changeLog = getChangeLog(passedBuilds)
+                echo "changeLog ${changeLog}"
                 sh '''
                     npm run build:starter
                 '''
-                String changeLog = getChangeLog(passedBuilds)
-                echo "changeLog ${changeLog}"
             }
         }
     }
