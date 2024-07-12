@@ -18,7 +18,7 @@ pipeline {
                 sh '''
                     npm run build:starter
                 '''
-                def changeLog = getChangeLog(passedBuilds)
+                String changeLog = getChangeLog(passedBuilds)
                 echo "changeLog ${changeLog}"
             }
         }
