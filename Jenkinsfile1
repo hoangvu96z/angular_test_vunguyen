@@ -17,12 +17,19 @@ pipeline {
             steps {
                  script{
                     def changeLog = getChangedFilesList();
+                    changeLog.each{ key, value -> 
+                        if (value.indexOf('navigation') > 0) {
+                            sh '''
+                                npm run build:nav
+                            '''
+                        } else if (value.indexOf('starter') > 0) {
+                            sh '''
+                                npm run build:starter
+                            '''
+                        }
+                    }
                     echo "changeLog ${changeLog}"
                  }
-            
-                sh '''
-                    npm run build:starter
-                '''
             }
         }
     }
