@@ -18,7 +18,7 @@ pipeline {
                  script{
                     def changeLog = getChangedFilesList();
                     def arrayProject = [];
-                    changeLog.eachWithIndex { value, index -> 
+                   for(String value in changeLog) { 
                         if (value.matches("(.*)projects/navigation/(.*)")) {
                             arrayProject.add('nav');
                             echo "nav1";
@@ -28,7 +28,7 @@ pipeline {
                         }
                     };
                     arrayProject.unique();
-                     changeLog.eachWithIndex { value, index -> 
+                     for(String value in arrayProject) { 
                         if (value.equals("nav")) {
                             sh '''
                                 npm run build:nav
