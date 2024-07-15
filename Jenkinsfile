@@ -19,6 +19,7 @@ pipeline {
                     def changeLog = getChangedFilesList();
                     def arrayProject = [];
                    for(String value in changeLog) { 
+                       echo "value 1 ${value}";
                         if (value.matches("(.*)projects/navigation/(.*)")) {
                             arrayProject.add('nav');
                             echo "nav1";
