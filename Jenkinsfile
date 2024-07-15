@@ -19,10 +19,10 @@ pipeline {
                     def changeLog = getChangedFilesList();
                     def arrayProject = [];
                     changeLog.eachWithIndex { value, index -> 
-                        if (value.contains('navigation')) {
+                        if (value.matches("(.*)projects/navigation/(.*)")) {
                             arrayProject.add('nav');
                             echo "nav1";
-                        } else if (value.contains('starter')) {
+                        } else if (value.matches("(.*)projects/starter/(.*)")) {
                             arrayProject.add('starter');
                             echo "starter";
                         }
