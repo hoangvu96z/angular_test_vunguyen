@@ -19,28 +19,27 @@ pipeline {
                     def changeLog = getChangedFilesList();
                     def arrayProject = [];
                     changeLog.eachWithIndex { value, index -> 
-                        echo "value ${value}"
                         if (value.contains('navigation')) {
                             arrayProject.add('nav');
-                       
+                            echo "nav1";
                         } else if (value.contains('starter')) {
                             arrayProject.add('starter');
-                         
+                            echo "starter";
                         }
                     };
                     arrayProject.unique();
                      changeLog.eachWithIndex { value, index -> 
-                         echo "value ${value}"
-                        if (value.contains('navigation')) {
+                        if (value.equals("nav")) {
                             sh '''
                                 npm run build:nav
                             '''
-                        } else if (value.contains('starter')) {
+                        } else if (value.equals("starter")) {
                             sh '''
                                 npm run build:starter
                             '''
                         }
                      };
+                    echo "arrayProject ${arrayProject}";
                     echo "changeLog ${changeLog}";
                  }
             }
