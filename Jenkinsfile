@@ -6,13 +6,13 @@ pipeline {
         nodejs 'nodejs14'
     }
     stages {
-        stage('Install') {
-            steps {
-                // sh '''
-                //     npm install -f
-                // '''
-            }
-        }
+        // stage('Install') {
+        //     steps {
+        //         sh '''
+        //             npm install -f
+        //         '''
+        //     }
+        // }
         stage('Build') {
             steps {
                  script{
