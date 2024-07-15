@@ -19,7 +19,7 @@ export class AppComponent {
       this.listVersion = data.game_indices;
     })
     this.dataService.sendGetRequest("generation").subscribe((data :any)=>{
-      this.listGenerations = data.results;
+      this.listGenerations = data.results; 
     })  
   }
   

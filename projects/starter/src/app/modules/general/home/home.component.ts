@@ -42,7 +42,8 @@ export class HomeComponent implements OnInit {
             this.pokemonDetailList.push(data);
             this.pokemonList.push({
               name: pokeName,
-              urlImage: pokeImage
+              urlImage: pokeImage,
+              temp: false
             })
           }
         }
