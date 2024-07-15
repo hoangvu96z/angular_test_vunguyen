@@ -8,9 +8,9 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh '''
-                    npm install -f
-                '''
+                // sh '''
+                //     npm install -f
+                // '''
             }
         }
         stage('Build') {
@@ -49,7 +49,7 @@ pipeline {
 }
 // returns a list of changed files
 @NonCPS
-String getChangedFilesList() {
+String[] getChangedFilesList() {
     changedFiles = []
     for (changeLogSet in currentBuild.changeSets) {
         for (entry in changeLogSet.getItems()) { // for each commit in the detected changes
